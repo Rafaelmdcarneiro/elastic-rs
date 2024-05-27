@@ -1,0 +1,23 @@
+[package]
+name = "elastic_derive"
+version = "0.21.0-pre.5"
+authors = ["Ashley Mannix <ashleymannix@live.com.au>"]
+license = "MIT/Apache-2.0"
+description = "Compile-time code generation for Elasticsearch type implementations."
+repository = "https://github.com/elastic-rs/elastic"
+edition = "2018"
+
+[lib]
+name = "elastic_derive"
+proc-macro = true
+
+[dependencies]
+serde = "~1"
+serde_json = "~1"
+proc-macro2 = "~1"
+syn = { version = "~1", features = ["visit", "parsing", "full"] }
+quote = "~1"
+serde_derive_internals = { version = "~0.25", default-features = false }
+quick-error = "~1"
+nom = { version = "~5", default-features = false, features = ["std"] }
+chrono = { version = "~0.4.0", features = [ "serde" ]}

@@ -1,0 +1,62 @@
+[package]
+name = "elastic"
+version = "0.21.0-pre.5"
+edition = "2018"
+authors = ["Ashley Mannix <ashleymannix@live.com.au>"]
+license = "MIT/Apache-2.0"
+keywords = ["elasticsearch", "search"]
+description = "A modular sync and async client for the Elasticsearch REST API."
+documentation = "https://docs.rs/elastic/"
+repository = "https://github.com/elastic-rs/elastic"
+readme = "../../README.md"
+
+[badges]
+travis-ci = { repository = "elastic-rs/elastic" }
+appveyor = { repository = "elastic-rs/elastic" }
+
+[features]
+default = [
+    "geo-types"
+]
+
+rustls-tls = [
+    "reqwest/rustls-tls"
+]
+
+default-tls = [
+    "reqwest/default-tls"
+]
+
+geo-types = [
+    "geo",
+    "geohash",
+    "geojson"
+]
+
+[dependencies]
+elastic_derive = { version = "~0.21.0-pre.5", path = "../elastic_derive" }
+
+quick-error = "~1"
+error-chain = "~0.12"
+log = "~0.4"
+uuid = { version = "~0.8", features = [ "v4" ] }
+url = "~2"
+bytes = "~0.4"
+http = "~0.2"
+serde = "~1"
+serde_json = "~1"
+serde_derive = "~1"
+reqwest = { version = "~0.9", default-features = false }
+futures = "~0.1"
+tokio = "~0.1"
+tokio-threadpool = "~0.1"
+fluent_builder = "~0.6"
+crossbeam-channel = "~0.4"
+chrono = { version = "~0.4", features = [ "serde" ]}
+geo = { version = "~0.12", optional = true }
+geohash = { version = "~0.9", optional = true }
+geojson = { version = "~0.17", optional = true }
+base64 = { version = "~0.11" }
+
+[dev-dependencies]
+env_logger = "~0.7"
