@@ -1,0 +1,12 @@
+[workspace]
+members = [
+    "src/elastic",
+    "src/elastic_derive",
+
+    "tools/generate_requests",
+
+    "tests/derive_compile_test",
+    "tests/integration",
+    
+    "examples/account_sample"
+]
